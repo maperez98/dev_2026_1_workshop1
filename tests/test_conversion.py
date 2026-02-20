@@ -6,7 +6,7 @@ class TestConversion:
         self.conversion = Conversion()
     
     def test_celsius_a_fahrenheit(self):
-        # Test con punto de congelación del agua
+        # Test con punto de congelación del agua 
         assert self.conversion.celsius_a_fahrenheit(0) == 32.0
         # Test con punto de ebullición del agua
         assert self.conversion.celsius_a_fahrenheit(100) == 212.0
