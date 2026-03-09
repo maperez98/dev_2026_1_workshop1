@@ -52,9 +52,6 @@ class Data:
                 resultado.append(lista2[j])
                 j += 1
 
-        while i < len(lista1):
-            resultado.append(lista1[i])
-            i += 1
 
         while j < len(lista2):
             resultado.append(lista2[j])
