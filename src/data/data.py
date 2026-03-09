@@ -14,13 +14,11 @@ class Data:
 
         return resultado
 
-
     def buscar_elemento(self, lista, elemento):
         for i in range(len(lista)):
             if lista[i] == elemento:
                 return i
         return -1
-
 
     def eliminar_duplicados(self, lista):
         resultado = []
@@ -38,7 +36,6 @@ class Data:
 
         return resultado
 
-
     def merge_ordenado(self, lista1, lista2):
         resultado = []
         i = 0
@@ -52,29 +49,21 @@ class Data:
                 resultado.append(lista2[j])
                 j += 1
 
-
         while j < len(lista2):
             resultado.append(lista2[j])
             j += 1
 
         return resultado
 
-
     def rotar_lista(self, lista, k):
         if len(lista) == 0:
             return []
 
         k = k % len(lista)
-
-        parte1 = lista[-k:] if k != 0 else []
-        parte2 = lista[:-k] if k != 0 else lista
-
-        return parte1 + parte2
-
+        return lista[-k:] + lista[:-k]
 
     def encuentra_numero_faltante(self, lista):
         n = len(lista) + 1
-
         suma_total = n * (n + 1) // 2
         suma_lista = 0
 
@@ -82,7 +71,6 @@ class Data:
             suma_lista += num
 
         return suma_total - suma_lista
-
 
     def es_subconjunto(self, conjunto1, conjunto2):
         for elem1 in conjunto1:
@@ -98,7 +86,6 @@ class Data:
 
         return True
 
-
     def implementar_pila(self):
         pila = []
 
@@ -106,13 +93,9 @@ class Data:
             pila.append(x)
 
         def pop():
-            if len(pila) == 0:
-                return None
             return pila.pop()
 
         def peek():
-            if len(pila) == 0:
-                return None
             return pila[-1]
 
         def is_empty():
@@ -125,7 +108,6 @@ class Data:
             "is_empty": is_empty
         }
 
-
     def implementar_cola(self):
         cola = []
 
@@ -133,13 +115,9 @@ class Data:
             cola.append(x)
 
         def dequeue():
-            if len(cola) == 0:
-                return None
             return cola.pop(0)
 
         def peek():
-            if len(cola) == 0:
-                return None
             return cola[0]
 
         def is_empty():
@@ -152,14 +130,12 @@ class Data:
             "is_empty": is_empty
         }
 
-
     def matriz_transpuesta(self, matriz):
         if len(matriz) == 0:
             return []
 
         filas = len(matriz)
         columnas = len(matriz[0])
-
         transpuesta = []
 
         for j in range(columnas):
