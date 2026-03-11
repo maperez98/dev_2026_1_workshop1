@@ -5,53 +5,46 @@ class Magic:
     """
     
     def fibonacci(self, n):
-        """
-        Calcula el n-ésimo número de la secuencia de Fibonacci.
-        
-        Args:
-            n (int): Posición en la secuencia (empezando desde 0)
-            
-        Returns:
-            int: El n-ésimo número de Fibonacci
-        """
-        pass
+         if n < 0:
+            return None
+         if n == 0:
+            return 0
+         if n == 1:
+            return 1
+         a, b = 0, 1
+         for _ in range(2, n + 1):
+          a, b = b, a + b
+         return b
     
     def secuencia_fibonacci(self, n):
-        """
-        Genera los primeros n números de la secuencia de Fibonacci.
-        
-        Args:
-            n (int): Cantidad de números a generar
-            
-        Returns:
-            list: Lista con los primeros n números de Fibonacci
-        """
-        pass
+        if n == 0:
+            return []
+        if n == 1:
+            return [0]
+
+        sec = [0, 1]
+        while len(sec) < n:
+            sec.append(sec[-1] + sec[-2])
+        return sec
     
     def es_primo(self, n):
-        """
-        Verifica si un número es primo.
+
+        if n <= 1:
+            return False
+        for i in range(2, int(n**0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
         
-        Args:
-            n (int): Número a verificar
-            
-        Returns:
-            bool: True si n es primo, False en caso contrario
-        """
-        pass
     
     def generar_primos(self, n):
-        """
-        Genera una lista de números primos hasta n.
-        
-        Args:
-            n (int): Límite superior para generar primos
-            
-        Returns:
-            list: Lista de números primos hasta n
-        """
-        pass
-    
+        primos = []
+        for i in range(2, n + 1):
+            if self.es_primo(i):
+                primos.append(i)
+        return primos
+
+       
     def es_numero_perfecto(self, n):
         """
         Verifica si un número es perfecto (igual a la suma de sus divisores propios).
